@@ -13,7 +13,7 @@ namespace longdbSpeakTxt.TxtToVoice
         DataTable txtdt = new DataTable();//总的记录
         delegate void myInvoke();
         /// <summary>
-        /// 定义全局播放变量。
+        /// 定义全局播放变量
         /// </summary>
         SpVoice speech = new SpVoice();
         public TxtToVoiceForm()
