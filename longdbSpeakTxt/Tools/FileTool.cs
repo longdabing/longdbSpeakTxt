@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,25 @@ namespace longdbSpeakTxt.Tools
                 txtdt.Rows.Add(linelist);               
             }
             return txtdt;
+        }
+        /// <summary>
+        /// 流转成图片
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public static Image StreamConvertToImage(Stream stream)
+        {
+            byte[] data = new byte[1024];
+            int length = 0;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                while ((length = stream.Read(data, 0, data.Length)) > 0)
+                {
+                    ms.Write(data, 0, length);
+                }
+                ms.Seek(0, SeekOrigin.Begin);
+               return Image.FromStream(ms);
+            }          
         }
     }
 }

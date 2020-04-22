@@ -1,4 +1,5 @@
-﻿using OpenCvSharp;
+﻿using longdbSpeakTxt.Tools;
+using OpenCvSharp;
 using System;
 using System.Drawing;
 using System.IO;
@@ -118,14 +119,9 @@ namespace longdbSpeakTxt.ImageToTxt
         {
             //从网上读取一张图片，该api是自动产生验证码。
             string imgUrl = "https://service.cheshi.com/user/validate/validatev3.php";
-
-            using (MemoryStream ms = ReadImgFromWeb(imgUrl))
-            {
-                Image img = Image.FromStream(ms);
-                pictureBox1.Image = img;
-
-                OpenCvSHarp(ms, "d:\\img.png");
-            }
+            Stream stream = HttpUtil.GetSingleton().ReadImgFromWeb(imgUrl);
+            pictureBox1.Image= FileTool.StreamConvertToImage(stream);
+            OpenCvSHarp(stream, "d:\\img.png");
 
             txtResult.Text =" " +ImageToText("d:\\img.png");
         }
@@ -134,7 +130,7 @@ namespace longdbSpeakTxt.ImageToTxt
         /// 用opencv进行降噪处理再ocr识别
         /// </summary>
         /// <param name="ms"></param>
-        private void OpenCvSHarp(MemoryStream ms,string path)
+        private void OpenCvSHarp(Stream ms,string path)
         {
             Mat simg = Mat.FromStream(ms, ImreadModes.Grayscale);
             //Cv2.ImShow("Input Image", simg);
@@ -147,23 +143,16 @@ namespace longdbSpeakTxt.ImageToTxt
         /// 从网上读取一张图片
         /// </summary>
         /// <param name="Url"></param>
-        public MemoryStream ReadImgFromWeb(string Url)
+        public Stream ReadImgFromWeb(string Url)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             request.Credentials = CredentialCache.DefaultCredentials; // 添加授权证书
             request.UserAgent = "Microsoft Internet Explorer";
             WebResponse response = request.GetResponse();
-            Stream s = response.GetResponseStream();
-            byte[] data = new byte[1024];
-            int length = 0;
-            MemoryStream ms = new MemoryStream();
-            while ((length = s.Read(data, 0, data.Length)) > 0)
-            {
-                ms.Write(data, 0, length);
-            }
-            ms.Seek(0, SeekOrigin.Begin);
+            Stream stream = response.GetResponseStream();
+           
             //pictureBox1.Image = Image.FromStream(ms);
-            return ms;
+            return stream;
         }
 
         private void btnopencv_Click(object sender, EventArgs e)

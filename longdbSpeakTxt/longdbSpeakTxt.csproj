@@ -111,6 +111,7 @@
       <DependentUpon>SRateSettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\FileTool.cs" />
+    <Compile Include="Tools\HttpUtil.cs" />
     <Compile Include="TxtToVoice\TxtToVoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
