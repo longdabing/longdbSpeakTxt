@@ -12,7 +12,7 @@ namespace longdbSpeakTxt.Tools
         private DBFactory dBFactory = null;
         private IDBUtil dBUtil = null;
         /// <summary>
-        /// 构造函数注入。
+        /// 构造函数注入。单例模式。
         /// </summary>
         /// <param name="dbType"></param>
         private DBFactory(DBType dbType)
