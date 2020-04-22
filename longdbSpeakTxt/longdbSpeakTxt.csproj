@@ -110,8 +110,13 @@
     <Compile Include="SRateSettingForm.Designer.cs">
       <DependentUpon>SRateSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\AccessUtil.cs" />
+    <Compile Include="Tools\DBFactory.cs" />
+    <Compile Include="Tools\DBType.cs" />
+    <Compile Include="Tools\DBUtil.cs" />
     <Compile Include="Tools\FileTool.cs" />
     <Compile Include="Tools\HttpUtil.cs" />
+    <Compile Include="Tools\IDBUtil.cs" />
     <Compile Include="TxtToVoice\TxtToVoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
