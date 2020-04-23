@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ namespace longdbSpeakTxt.Tools
     public class AccessUtil : IDBUtil
     {
         private static AccessUtil accessUtil = null;
+        private static string connstr = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = DataBase\longdb.mdb";
+        OleDbConnection conn = null;// new OleDbConnection();
         private AccessUtil()
         { }
         public static AccessUtil SingleSqlDBUtil()
@@ -31,27 +34,55 @@ namespace longdbSpeakTxt.Tools
 
         public void CloseConn()
         {
-            throw new NotImplementedException();
+            if (conn != null && conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+                conn.Dispose();
+                conn = null;
+            }
         }
 
         public void CommitTrans()
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// 插入，更新，删除。
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
         public int Execute(string sql)
         {
-            throw new NotImplementedException();
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            return cmd.ExecuteNonQuery(); //返回受影响的行数。
         }
 
         public void OpenConn()
         {
-            throw new NotImplementedException();
+            if (conn == null)
+            {
+                conn = new OleDbConnection(connstr);
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+            }
         }
 
         public DataTable Querry(string sql)
         {
-            throw new NotImplementedException();
+            DataTable retdt = new DataTable();
+            try
+            {
+                OpenConn();
+                OleDbDataAdapter dbDataAdapter = new OleDbDataAdapter(sql, conn); //创建适配对象
+                dbDataAdapter.Fill(retdt); //用适配对象填充表对象
+            }
+            catch (Exception ex)
+            { }
+            finally
+            {
+                CloseConn();
+            }
+            return retdt;
         }
 
         public void RollbackTrans()

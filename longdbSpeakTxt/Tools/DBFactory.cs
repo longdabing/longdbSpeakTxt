@@ -9,8 +9,8 @@ namespace longdbSpeakTxt.Tools
     public class DBFactory
     {
         //public DBType dbType = 0;
-        private DBFactory dBFactory = null;
-        private IDBUtil dBUtil = null;
+        private static DBFactory dBFactory = null;
+        private static IDBUtil dBUtil = null;
         /// <summary>
         /// 构造函数注入。单例模式。
         /// </summary>
@@ -30,7 +30,7 @@ namespace longdbSpeakTxt.Tools
                     break;
             }
         }
-        public IDBUtil SingelDBFactory(DBType dbType)
+        public static IDBUtil SingelDBFactory(DBType dbType)
         {
             if (dBFactory == null)
             {

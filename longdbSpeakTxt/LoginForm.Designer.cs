@@ -44,6 +44,7 @@
             this.txtpwd.PasswordChar = '*';
             this.txtpwd.Size = new System.Drawing.Size(160, 21);
             this.txtpwd.TabIndex = 13;
+            this.txtpwd.Text = "123";
             // 
             // txtuser
             // 

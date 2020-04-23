@@ -22,12 +22,18 @@ namespace longdbSpeakTxt
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            if (txtuser.Text.Equals("admin"))
+            DataTable table = TxtDA.GetUser(txtuser.Text.Trim(),txtpwd.Text.Trim());
+            if (table != null && table.Rows.Count > 0)
             {
                 MainForm mainForm = new MainForm();
                 this.Visible = false;
                 mainForm.ShowDialog();
                 this.Visible = true;
+            }
+            else
+
+            {
+                MessageBox.Show("无该用户！", "提示：");
             }
         }
 

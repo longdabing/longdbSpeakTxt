@@ -117,6 +117,7 @@
     <Compile Include="Tools\FileTool.cs" />
     <Compile Include="Tools\HttpUtil.cs" />
     <Compile Include="Tools\IDBUtil.cs" />
+    <Compile Include="TxtDA.cs" />
     <Compile Include="TxtToVoice\TxtToVoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -394,6 +395,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataBase\longdb.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Dll\Interop.MODI.dll" />
     <Content Include="Dll\IrisSkin4.dll" />
     <Content Include="Dll\sapi.dll" />
