@@ -40,7 +40,7 @@ namespace longdbSpeakTxt.Tools
         }
         public void CloseConn()
         {
-            if (conn != null && conn.State == connState.Open)
+            if (conn != null && conn.State == ConnectionState.Open)
             {
                 conn.Close();
                 conn.Dispose();
@@ -77,33 +77,19 @@ namespace longdbSpeakTxt.Tools
         }
         public  int Update(DataTable dt, string sql)
         {
-            SqlDataAdapter myDataAdapter = new SqlDataAdapter();
-            myDataAdapter.SelectCommand = new SqlCommand(sql, conn, trans);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = new SqlCommand(sql, conn, trans);
 
-            SqlCommandBuilder custCB = new SqlCommandBuilder(myDataAdapter);
-            custCB.ConflictOption = ConflictOption.OverwriteChanges;
-            custCB.SetAllValues = true;
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+            builder.ConflictOption = ConflictOption.OverwriteChanges;
+            builder.SetAllValues = true;
 
-            foreach (DataRow dr in dt.Rows)
-            {
-                if (dr.RowState == DataRowState.Unchanged)
-                {
-                    if (ismain)
-                    {
-                        dr.SetModified();
-                    }
-                    else
-                    {
-                        dr.SetAdded();
-                    }
-                }
-            }
             int retvalue = 0;
             try
             {
-                retvalue = myDataAdapter.Update(dt);
+                retvalue = adapter.Update(dt);
                 dt.AcceptChanges();
-                myDataAdapter.Dispose();
+                adapter.Dispose();
             }
             catch (Exception ex)
             {
@@ -190,8 +176,8 @@ namespace longdbSpeakTxt.Tools
             try
             {
                 OpenConn();
-                SqlDataAdapter sdd = new SqlDataAdapter(sql, conn);
-                sdd.Fill(dt);
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                adapter.Fill(dt);
             }
             catch (Exception)
             {
