@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace longdbSpeakTxt.Tools
 {
-    public enum DBType : int
+    public enum DBType :int
     {
         sql = 0,
         access = 1,
