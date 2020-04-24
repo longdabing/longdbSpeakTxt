@@ -10,6 +10,7 @@ namespace longdbSpeakTxt.Tools
 {
     public class AccessUtil : IDBUtil
     {
+        private static OleDbTransaction trans = null;
         private static AccessUtil accessUtil = null;
         private static string connstr = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = DataBase\longdb.mdb";
         OleDbConnection conn = null;// new OleDbConnection();
@@ -29,7 +30,10 @@ namespace longdbSpeakTxt.Tools
         }
         public void BeginTrans()
         {
-            throw new NotImplementedException();
+            if (trans == null)
+            {
+                trans = conn.BeginTransaction();
+            }
         }
 
         public void CloseConn()
@@ -44,7 +48,21 @@ namespace longdbSpeakTxt.Tools
 
         public void CommitTrans()
         {
-            throw new NotImplementedException();
+            if (trans != null)
+            {
+                trans.Commit();
+                trans.Dispose();
+                trans = null;
+            }
+        }
+        public void RollbackTrans()
+        {
+            if (trans != null)
+            {
+                trans.Rollback();
+                trans.Dispose();
+                trans = null;
+            }
         }
         /// <summary>
         /// 插入，更新，删除。
@@ -85,19 +103,33 @@ namespace longdbSpeakTxt.Tools
             return retdt;
         }
 
-        public void RollbackTrans()
-        {
-            throw new NotImplementedException();
-        }
 
         public int SqlBulkInsert(DataTable dt, string tablename)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException("Access无此方法。");
         }
 
         public int Update(DataTable table, string sql)
         {
-            throw new NotImplementedException();
+            OleDbDataAdapter adapter = new OleDbDataAdapter();
+            adapter.SelectCommand = new OleDbCommand(sql, conn, trans);
+
+            OleDbCommandBuilder builder = new OleDbCommandBuilder(adapter);
+            builder.ConflictOption = ConflictOption.OverwriteChanges;
+            builder.SetAllValues = true;
+
+            int retvalue = 0;
+            try
+            {
+                retvalue = adapter.Update(table);
+                table.AcceptChanges();
+                adapter.Dispose();
+            }
+            catch (Exception ex)
+            {
+                //CBase.AddErroLog("DBConn.Update:(" + DateTime.Now.ToString() + ")" + ex.ToString() + " sql:" + sql);
+            }
+            return retvalue;
         }
     }
 }

@@ -36,5 +36,37 @@ namespace longdbSpeakTxt
             retvalue += dBUtil.Execute(dsql);
             return retvalue;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mdt">主表</param>
+        /// <param name="mtablename">主表表名</param>
+        /// <param name="ddt">子表</param>
+        /// <param name="dtablename">子表表名</param>
+        /// <returns></returns>
+        public static int Update(DataTable mdt,string mtablename, DataTable ddt,string dtablename)
+        {
+            int retvalue = 0;
+            string msql = "select top 0 * from '"+ mtablename + "'";
+            string dsql = "select top 0 * from '" + dtablename + "'";
+            try
+            {
+                dBUtil.OpenConn();
+                dBUtil.BeginTrans();
+                retvalue = dBUtil.Update(mdt, msql);
+                retvalue += dBUtil.Update(ddt, dsql);
+                dBUtil.CommitTrans();
+            }
+            catch (Exception ex)
+            {
+                dBUtil.RollbackTrans();
+            }
+            finally
+            {
+                dBUtil.CloseConn();
+            }
+            return retvalue;
+        }
     }
 }

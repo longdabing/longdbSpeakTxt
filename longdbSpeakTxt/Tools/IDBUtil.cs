@@ -14,13 +14,18 @@ namespace longdbSpeakTxt.Tools
         /// </summary>
         int Execute(string sql);
         /// <summary>
-        /// 批量插入。
+        /// 单表批量插入。
         /// </summary>
         int SqlBulkInsert(DataTable dt, string tablename);
         /// <summary>
-        /// 批量插入或者更新数据
+        /// 单表批量插入或者更新数据
         /// </summary>
         int Update(DataTable table,string sql);
+
+        /// <summary>
+        /// 主表和子表批量插入或者更新数据
+        /// </summary>
+        //int Update(DataTable firsttable,DataTable secondtable,string firstsql,string secondsql);
         /// <summary>
         /// 
         /// </summary>
