@@ -31,8 +31,12 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnsave = new System.Windows.Forms.Button();
             this.dgrid = new System.Windows.Forms.DataGridView();
-            this.txt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnquerry = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txttitle = new System.Windows.Forms.TextBox();
+            this.FTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FMNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -49,6 +53,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txttitle);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnquerry);
             this.splitContainer1.Panel1.Controls.Add(this.btnsave);
             // 
             // splitContainer1.Panel2
@@ -60,12 +67,13 @@
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(12, 25);
+            this.btnsave.Location = new System.Drawing.Point(12, 21);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 0;
             this.btnsave.Text = "保存";
             this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // dgrid
             // 
@@ -73,8 +81,9 @@
             this.dgrid.BackgroundColor = System.Drawing.Color.White;
             this.dgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.txt,
-            this.txtline});
+            this.FTitle,
+            this.FLine,
+            this.FMNo});
             this.dgrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgrid.GridColor = System.Drawing.Color.White;
@@ -85,18 +94,54 @@
             this.dgrid.Size = new System.Drawing.Size(800, 380);
             this.dgrid.TabIndex = 0;
             // 
-            // txt
+            // btnquerry
             // 
-            this.txt.DataPropertyName = "FTitle";
-            this.txt.HeaderText = "名称";
-            this.txt.Name = "txt";
+            this.btnquerry.Location = new System.Drawing.Point(426, 22);
+            this.btnquerry.Name = "btnquerry";
+            this.btnquerry.Size = new System.Drawing.Size(75, 23);
+            this.btnquerry.TabIndex = 1;
+            this.btnquerry.Text = "查询";
+            this.btnquerry.UseVisualStyleBackColor = true;
+            this.btnquerry.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtline
+            // label1
             // 
-            this.txtline.DataPropertyName = "FLine";
-            this.txtline.HeaderText = "诗句";
-            this.txtline.Name = "txtline";
-            this.txtline.Width = 400;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(245, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "题目：";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txttitle
+            // 
+            this.txttitle.Location = new System.Drawing.Point(287, 23);
+            this.txttitle.Name = "txttitle";
+            this.txttitle.Size = new System.Drawing.Size(127, 21);
+            this.txttitle.TabIndex = 3;
+            this.txttitle.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // FTitle
+            // 
+            this.FTitle.DataPropertyName = "FTitle";
+            this.FTitle.HeaderText = "名称";
+            this.FTitle.Name = "FTitle";
+            // 
+            // FLine
+            // 
+            this.FLine.DataPropertyName = "FLine";
+            this.FLine.HeaderText = "诗句";
+            this.FLine.Name = "FLine";
+            this.FLine.Width = 400;
+            // 
+            // FMNo
+            // 
+            this.FMNo.DataPropertyName = "FMNo";
+            this.FMNo.HeaderText = "FMNo";
+            this.FMNo.Name = "FMNo";
+            this.FMNo.ReadOnly = true;
+            this.FMNo.Visible = false;
             // 
             // PoetryCreateForm
             // 
@@ -109,6 +154,7 @@
             this.ShowIcon = false;
             this.Text = "古诗录入";
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -122,7 +168,11 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.DataGridView dgrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtline;
+        private System.Windows.Forms.TextBox txttitle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnquerry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FLine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FMNo;
     }
 }

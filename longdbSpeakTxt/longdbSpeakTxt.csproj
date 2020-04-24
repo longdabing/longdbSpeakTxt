@@ -405,7 +405,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\longdb.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Dll\Interop.MODI.dll" />
     <Content Include="Dll\IrisSkin4.dll" />
