@@ -61,5 +61,13 @@ namespace longdbSpeakTxt
             rateForm.WindowState = FormWindowState.Maximized;
             rateForm.Show();
         }
+
+        private void PoetryCreateItem_Click(object sender, EventArgs e)
+        {
+            PoetryCreateForm Poetry = new PoetryCreateForm();
+            Poetry.MdiParent = this;
+            Poetry.WindowState = FormWindowState.Maximized;
+            Poetry.Show();
+        }
     }
 }

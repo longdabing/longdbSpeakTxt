@@ -37,8 +37,9 @@
             this.tmenusetting = new System.Windows.Forms.ToolStripMenuItem();
             this.settingitem = new System.Windows.Forms.ToolStripMenuItem();
             this.backsetitem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.RateItemSetting = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.PoetryCreateItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@
             // mitemtxttovoice
             // 
             this.mitemtxttovoice.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.txttovice});
+            this.txttovice,
+            this.PoetryCreateItem});
             this.mitemtxttovoice.Name = "mitemtxttovoice";
             this.mitemtxttovoice.Size = new System.Drawing.Size(80, 21);
             this.mitemtxttovoice.Text = "文字转语音";
@@ -80,7 +82,7 @@
             // imagetotxt
             // 
             this.imagetotxt.Name = "imagetotxt";
-            this.imagetotxt.Size = new System.Drawing.Size(180, 22);
+            this.imagetotxt.Size = new System.Drawing.Size(148, 22);
             this.imagetotxt.Text = "提取图片文字";
             this.imagetotxt.Click += new System.EventHandler(this.imagetotxt_Click);
             // 
@@ -97,27 +99,34 @@
             // settingitem
             // 
             this.settingitem.Name = "settingitem";
-            this.settingitem.Size = new System.Drawing.Size(180, 22);
+            this.settingitem.Size = new System.Drawing.Size(124, 22);
             this.settingitem.Text = "切换皮肤";
             this.settingitem.Click += new System.EventHandler(this.settingitem_Click);
             // 
             // backsetitem
             // 
             this.backsetitem.Name = "backsetitem";
-            this.backsetitem.Size = new System.Drawing.Size(180, 22);
+            this.backsetitem.Size = new System.Drawing.Size(124, 22);
             this.backsetitem.Text = "背景设置";
             this.backsetitem.Click += new System.EventHandler(this.backsetitem_Click);
+            // 
+            // RateItemSetting
+            // 
+            this.RateItemSetting.Name = "RateItemSetting";
+            this.RateItemSetting.Size = new System.Drawing.Size(124, 22);
+            this.RateItemSetting.Text = "语速设置";
+            this.RateItemSetting.Click += new System.EventHandler(this.RateItemSetting_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // RateItemSetting
+            // PoetryCreateItem
             // 
-            this.RateItemSetting.Name = "RateItemSetting";
-            this.RateItemSetting.Size = new System.Drawing.Size(180, 22);
-            this.RateItemSetting.Text = "语速设置";
-            this.RateItemSetting.Click += new System.EventHandler(this.RateItemSetting_Click);
+            this.PoetryCreateItem.Name = "PoetryCreateItem";
+            this.PoetryCreateItem.Size = new System.Drawing.Size(180, 22);
+            this.PoetryCreateItem.Text = "古诗录入";
+            this.PoetryCreateItem.Click += new System.EventHandler(this.PoetryCreateItem_Click);
             // 
             // MainForm
             // 
@@ -150,5 +159,6 @@
         private System.Windows.Forms.ToolStripMenuItem backsetitem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem RateItemSetting;
+        private System.Windows.Forms.ToolStripMenuItem PoetryCreateItem;
     }
 }

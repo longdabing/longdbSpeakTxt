@@ -13,7 +13,18 @@ namespace longdbSpeakTxt
         private static IDBUtil dBUtil = DBFactory.SingelDBFactory(DBType.access);
         public static DataTable GetUser(string name,string pwd)
         {
-            string sql = "select FNo from TUser where FName='"+name+ "' and FPwd='"+pwd+"'";
+            string sql = "select FNo from TUser where FName='" + name + "' and FPwd='" + pwd + "'";
+            return dBUtil.Querry(sql);
+        }
+        public static DataTable GetPoetryTable(string title)
+        {
+            string sql = @"select FTitle,detail.FLine1,detail.FLine2,detail.FLine3,detail.FLine4,
+ detail.FLine5,detail.FLine6,detail.FLine7,detail.FLine8 from TPoetry as main 
+        left join TPoetryDetail as detail on detail.FMNo=main.FNo";
+            if (!string.IsNullOrEmpty(title))
+            {
+                sql += " where FTitle='" + title + "'";
+            }
             return dBUtil.Querry(sql);
         }
         public static int CreatePoetry(DataTable maindt,DataTable detaildt)
