@@ -39,6 +39,7 @@
             this.btncancel = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
             this.btncutscreen = new System.Windows.Forms.Button();
+            this.btnaddtxt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -103,6 +104,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnaddtxt);
             this.groupBox1.Controls.Add(this.btncutscreen);
             this.groupBox1.Controls.Add(this.btnsave);
             this.groupBox1.Controls.Add(this.btncancel);
@@ -140,7 +142,7 @@
             // 
             // btncancel
             // 
-            this.btncancel.Location = new System.Drawing.Point(14, 164);
+            this.btncancel.Location = new System.Drawing.Point(14, 193);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(127, 23);
             this.btncancel.TabIndex = 4;
@@ -150,7 +152,7 @@
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(14, 193);
+            this.btnsave.Location = new System.Drawing.Point(14, 222);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(127, 23);
             this.btnsave.TabIndex = 5;
@@ -167,6 +169,16 @@
             this.btncutscreen.Text = "截屏幕";
             this.btncutscreen.UseVisualStyleBackColor = true;
             this.btncutscreen.Click += new System.EventHandler(this.btncutscreen_Click);
+            // 
+            // btnaddtxt
+            // 
+            this.btnaddtxt.Location = new System.Drawing.Point(14, 164);
+            this.btnaddtxt.Name = "btnaddtxt";
+            this.btnaddtxt.Size = new System.Drawing.Size(127, 23);
+            this.btnaddtxt.TabIndex = 7;
+            this.btnaddtxt.Text = "添加文字";
+            this.btnaddtxt.UseVisualStyleBackColor = true;
+            this.btnaddtxt.Click += new System.EventHandler(this.btnaddtxt_Click);
             // 
             // DealImageForm
             // 
@@ -199,5 +211,6 @@
         private System.Windows.Forms.Button btncancel;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Button btncutscreen;
+        private System.Windows.Forms.Button btnaddtxt;
     }
 }

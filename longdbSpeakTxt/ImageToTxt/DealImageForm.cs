@@ -1,4 +1,5 @@
-﻿using System;
+﻿using longdbSpeakTxt.Tools;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -164,6 +165,11 @@ namespace longdbSpeakTxt.ImageToTxt
             picbox.Image = screenimg;
             //截取后自动保存到当前目录
             //screenimg.Save("screenimg.png", ImageFormat.Png);
+        }
+
+        private void btnaddtxt_Click(object sender, EventArgs e)
+        {
+            DealImg.WriteUp(picbox.Image, "添加文字测试", 180, 500); 
         }
     }
 }

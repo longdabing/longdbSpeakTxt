@@ -119,6 +119,7 @@
     <Compile Include="Tools\AccessUtil.cs" />
     <Compile Include="Tools\DBFactory.cs" />
     <Compile Include="Tools\DBType.cs" />
+    <Compile Include="Tools\DealImg.cs" />
     <Compile Include="Tools\SqlDBUtil.cs" />
     <Compile Include="Tools\FileTool.cs" />
     <Compile Include="Tools\HttpUtil.cs" />
