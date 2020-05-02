@@ -20,6 +20,6 @@ namespace longdbSpeakTxt
         public static int SRate = 0;
         public static string fieletxtpath = Directory.GetCurrentDirectory() + "\\Resources\\AncientPoetry.txt";
         public static string backimgpath = Directory.GetCurrentDirectory() + @"\Resources\pictures\mainbackimg.png";
-
+        public static string fielexmlpath = Directory.GetCurrentDirectory() + "\\Resources\\login.xml";
     }
 }

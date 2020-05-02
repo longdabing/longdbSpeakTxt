@@ -69,5 +69,13 @@ namespace longdbSpeakTxt
             Poetry.WindowState = FormWindowState.Maximized;
             Poetry.Show();
         }
+
+        private void titemdealimg_Click(object sender, EventArgs e)
+        {
+            DealImageForm dealImage = new DealImageForm();
+            dealImage.MdiParent = this;
+            dealImage.WindowState = FormWindowState.Maximized;
+            dealImage.Show();
+        }
     }
 }

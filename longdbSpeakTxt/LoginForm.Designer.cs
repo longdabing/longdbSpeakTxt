@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
             this.btnlogin = new System.Windows.Forms.Button();
+            this.chkauto = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtpwd
@@ -92,11 +93,24 @@
             this.btnlogin.UseVisualStyleBackColor = true;
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
+            // chkauto
+            // 
+            this.chkauto.AutoSize = true;
+            this.chkauto.Checked = true;
+            this.chkauto.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkauto.Location = new System.Drawing.Point(85, 80);
+            this.chkauto.Name = "chkauto";
+            this.chkauto.Size = new System.Drawing.Size(96, 16);
+            this.chkauto.TabIndex = 14;
+            this.chkauto.Text = "是否自动登录";
+            this.chkauto.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(241, 146);
+            this.Controls.Add(this.chkauto);
             this.Controls.Add(this.txtpwd);
             this.Controls.Add(this.txtuser);
             this.Controls.Add(this.label2);
@@ -120,6 +134,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.Button btnlogin;
+        private System.Windows.Forms.CheckBox chkauto;
     }
 }
 

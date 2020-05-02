@@ -77,6 +77,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageToTxt\DealImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageToTxt\DealImageForm.Designer.cs">
+      <DependentUpon>DealImageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageToTxt\ImageToTxtForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="TxtToVoice\TxtToVoiceForm.Designer.cs">
       <DependentUpon>TxtToVoiceForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ImageToTxt\DealImageForm.resx">
+      <DependentUpon>DealImageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImageToTxt\ImageToTxtForm.resx">
       <DependentUpon>ImageToTxtForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,6 +422,9 @@
     <Content Include="Dll\Tesseract.dll" />
     <Content Include="media.ico" />
     <Content Include="Resources\AncientPoetry.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\login.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\pictures\mainbackimg.png">

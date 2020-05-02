@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace longdbSpeakTxt.Tools
 {
@@ -63,6 +64,61 @@ namespace longdbSpeakTxt.Tools
                 ms.Seek(0, SeekOrigin.Begin);
                return Image.FromStream(ms);
             }          
+        }
+
+        /// <summary>
+        /// 创建xml文件。
+        /// </summary>
+        /// <param name="path"></param>
+        public static void CreateXml(string path)
+        {
+            XmlTextWriter writer = new XmlTextWriter(path, Encoding.UTF8);
+            //设置缩进
+            writer.Formatting = Formatting.Indented;
+            writer.WriteStartDocument();
+            writer.WriteStartElement("UserMess");
+
+            //写中间字节点
+            writer.WriteStartElement("hname");
+            writer.WriteString("龙大饼");
+            writer.WriteEndElement();
+
+            writer.WriteStartElement("hage");
+            writer.WriteString("18");
+            writer.WriteEndElement();
+
+            writer.WriteEndElement();
+
+            writer.WriteEndDocument();
+
+            writer.Flush();
+            writer.Close();
+            writer.Dispose();
+        }
+        public static List<string> ReadXml(string path)
+        {
+            List<string> listcontent = new List<string>();
+            FileInfo fileInfo = new FileInfo(path);
+            if (fileInfo.Exists)
+            {
+               
+                XmlDocument document = new XmlDocument();
+                document.Load(path);
+                XmlElement element = document.DocumentElement;
+                foreach (XmlElement xmlnode in element.ChildNodes)
+                {
+                    switch (xmlnode.Name)
+                    {
+                        case "hname":
+                            listcontent.Add(xmlnode.InnerText);
+                            break;
+                        case "hpwd":
+                            listcontent.Add(xmlnode.InnerText);
+                            break;
+                    }
+                }
+            }
+            return listcontent;
         }
     }
 }
