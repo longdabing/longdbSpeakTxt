@@ -6,6 +6,10 @@ using System.Windows.Forms;
 
 namespace longdbSpeakTxt.ImageToTxt
 {
+    /// <summary>
+    /// 参考博客。
+    /// https://blog.csdn.net/jiangxinyu/article/details/6222322/
+    /// </summary>
     public partial class DealImageForm : Form
     {
         private Image temimg = null;
