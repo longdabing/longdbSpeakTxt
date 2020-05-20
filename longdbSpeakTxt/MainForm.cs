@@ -77,5 +77,13 @@ namespace longdbSpeakTxt
             dealImage.WindowState = FormWindowState.Maximized;
             dealImage.Show();
         }
+
+        private void titembarchart_Click(object sender, EventArgs e)
+        {
+            BarChartForm barChart = new BarChartForm();
+            barChart.MdiParent = this;
+            barChart.WindowState = FormWindowState.Maximized;
+            barChart.Show();
+        }
     }
 }

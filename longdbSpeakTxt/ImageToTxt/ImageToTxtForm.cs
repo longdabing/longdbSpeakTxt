@@ -69,7 +69,16 @@ namespace longdbSpeakTxt.ImageToTxt
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var imgPath = openFileDialog1.FileName;
-                pictureBox1.Image = Image.FromFile(imgPath);
+                #region//测试代码 2020.5.20
+                FileStream stream = new FileStream(imgPath, FileMode.OpenOrCreate);
+                byte[] arr = new byte[stream.Length];
+                stream.Read(arr, 0, arr.Length);
+                string imgstr = System.Text.Encoding.UTF8.GetString(arr);
+                #endregion
+
+                Image image = Image.FromFile(imgPath);
+                pictureBox1.Image = image;
+       
                 string strResult = ImageToText(imgPath);
                 if (string.IsNullOrEmpty(strResult))
                 {

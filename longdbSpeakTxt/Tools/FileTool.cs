@@ -22,13 +22,13 @@ namespace longdbSpeakTxt.Tools
             txtdt.Columns.Add("Line3", typeof(string));
             txtdt.Columns.Add("Line4", typeof(string));
 
-            //txtdt.Columns.Add("Line5", typeof(string));
-            //txtdt.Columns.Add("Line6", typeof(string));
-            //txtdt.Columns.Add("Line7", typeof(string));
-            //txtdt.Columns.Add("Line8", typeof(string));
+            txtdt.Columns.Add("Line5", typeof(string));
+            txtdt.Columns.Add("Line6", typeof(string));
+            txtdt.Columns.Add("Line7", typeof(string));
+            txtdt.Columns.Add("Line8", typeof(string));
 
             //filelist[i].FullName 返回文件的绝对路径
-            
+
             FileInfo fileInfo = new FileInfo(path);
             if (!fileInfo.Exists)
             {

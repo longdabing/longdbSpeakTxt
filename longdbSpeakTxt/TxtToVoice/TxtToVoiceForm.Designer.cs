@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btngettxt = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gboxlist = new System.Windows.Forms.GroupBox();
             this.listgrid = new System.Windows.Forms.DataGridView();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCycle = new System.Windows.Forms.Button();
             this.btnstop = new System.Windows.Forms.Button();
             this.btnpasuse = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtgrid = new System.Windows.Forms.DataGridView();
             this.txt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCycle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -112,10 +112,10 @@
             // Title
             // 
             this.Title.DataPropertyName = "Title";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.Title.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.Title.DefaultCellStyle = dataGridViewCellStyle1;
             this.Title.HeaderText = "Title";
             this.Title.Name = "Title";
             this.Title.ReadOnly = true;
@@ -133,6 +133,16 @@
             this.groupBox2.Size = new System.Drawing.Size(533, 41);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
+            // 
+            // btnCycle
+            // 
+            this.btnCycle.Location = new System.Drawing.Point(100, 12);
+            this.btnCycle.Name = "btnCycle";
+            this.btnCycle.Size = new System.Drawing.Size(75, 23);
+            this.btnCycle.TabIndex = 8;
+            this.btnCycle.Text = "循环播放";
+            this.btnCycle.UseVisualStyleBackColor = true;
+            this.btnCycle.Click += new System.EventHandler(this.btnCycle_Click);
             // 
             // btnstop
             // 
@@ -183,24 +193,14 @@
             // txt
             // 
             this.txt.DataPropertyName = "txt";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
-            this.txt.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            this.txt.DefaultCellStyle = dataGridViewCellStyle2;
             this.txt.HeaderText = "txt";
             this.txt.Name = "txt";
             this.txt.ReadOnly = true;
-            this.txt.Width = 200;
-            // 
-            // btnCycle
-            // 
-            this.btnCycle.Location = new System.Drawing.Point(100, 12);
-            this.btnCycle.Name = "btnCycle";
-            this.btnCycle.Size = new System.Drawing.Size(75, 23);
-            this.btnCycle.TabIndex = 8;
-            this.btnCycle.Text = "循环播放";
-            this.btnCycle.UseVisualStyleBackColor = true;
-            this.btnCycle.Click += new System.EventHandler(this.btnCycle_Click);
+            this.txt.Width = 500;
             // 
             // TxtToVoiceForm
             // 
@@ -237,7 +237,7 @@
         private System.Windows.Forms.DataGridView txtgrid;
         private System.Windows.Forms.Button btnstop;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txt;
         private System.Windows.Forms.Button btnCycle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txt;
     }
 }
