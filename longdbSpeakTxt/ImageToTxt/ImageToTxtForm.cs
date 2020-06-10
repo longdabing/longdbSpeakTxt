@@ -73,7 +73,9 @@ namespace longdbSpeakTxt.ImageToTxt
                 FileStream stream = new FileStream(imgPath, FileMode.OpenOrCreate);
                 byte[] arr = new byte[stream.Length];
                 stream.Read(arr, 0, arr.Length);
-                string imgstr = System.Text.Encoding.UTF8.GetString(arr);
+
+                string imgstr = Encoding.UTF8.GetString(arr);
+                imgstr = Encoding.UTF7.GetString(arr);
                 #endregion
 
                 Image image = Image.FromFile(imgPath);

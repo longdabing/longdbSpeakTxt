@@ -48,6 +48,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Dll\IrisSkin4.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net40\OpenCvSharp.dll</HintPath>
     </Reference>
@@ -108,6 +112,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\MessageModel.cs" />
     <Compile Include="ProdConst.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,6 +148,12 @@
     </Compile>
     <Compile Include="TxtToVoice\TxtToVoiceForm.Designer.cs">
       <DependentUpon>TxtToVoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebSocket\SocketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebSocket\SocketForm.Designer.cs">
+      <DependentUpon>SocketForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ImageToTxt\BarChartForm.resx">
       <DependentUpon>BarChartForm.cs</DependentUpon>
@@ -180,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TxtToVoice\TxtToVoiceForm.resx">
       <DependentUpon>TxtToVoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebSocket\SocketForm.resx">
+      <DependentUpon>SocketForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -429,6 +443,7 @@
     </Content>
     <Content Include="Dll\Interop.MODI.dll" />
     <Content Include="Dll\IrisSkin4.dll" />
+    <Content Include="Dll\Newtonsoft.Json.dll" />
     <Content Include="Dll\sapi.dll" />
     <Content Include="Dll\Tesseract.dll" />
     <Content Include="media.ico" />

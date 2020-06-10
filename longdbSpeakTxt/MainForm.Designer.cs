@@ -36,13 +36,15 @@
             this.imagetotxtitem = new System.Windows.Forms.ToolStripMenuItem();
             this.imagetotxt = new System.Windows.Forms.ToolStripMenuItem();
             this.titemdealimg = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmenuitemchart = new System.Windows.Forms.ToolStripMenuItem();
+            this.titembarchart = new System.Windows.Forms.ToolStripMenuItem();
             this.tmenusetting = new System.Windows.Forms.ToolStripMenuItem();
             this.settingitem = new System.Windows.Forms.ToolStripMenuItem();
             this.backsetitem = new System.Windows.Forms.ToolStripMenuItem();
             this.RateItemSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.tmenuitemchart = new System.Windows.Forms.ToolStripMenuItem();
-            this.titembarchart = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sockettem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +54,7 @@
             this.mitemtxttovoice,
             this.imagetotxtitem,
             this.tmenuitemchart,
+            this.toolStripMenuItem1,
             this.tmenusetting});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -94,16 +97,31 @@
             // imagetotxt
             // 
             this.imagetotxt.Name = "imagetotxt";
-            this.imagetotxt.Size = new System.Drawing.Size(180, 22);
+            this.imagetotxt.Size = new System.Drawing.Size(148, 22);
             this.imagetotxt.Text = "提取图片文字";
             this.imagetotxt.Click += new System.EventHandler(this.imagetotxt_Click);
             // 
             // titemdealimg
             // 
             this.titemdealimg.Name = "titemdealimg";
-            this.titemdealimg.Size = new System.Drawing.Size(180, 22);
+            this.titemdealimg.Size = new System.Drawing.Size(148, 22);
             this.titemdealimg.Text = "图片处理";
             this.titemdealimg.Click += new System.EventHandler(this.titemdealimg_Click);
+            // 
+            // tmenuitemchart
+            // 
+            this.tmenuitemchart.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.titembarchart});
+            this.tmenuitemchart.Name = "tmenuitemchart";
+            this.tmenuitemchart.Size = new System.Drawing.Size(44, 21);
+            this.tmenuitemchart.Text = "图表";
+            // 
+            // titembarchart
+            // 
+            this.titembarchart.Name = "titembarchart";
+            this.titembarchart.Size = new System.Drawing.Size(180, 22);
+            this.titembarchart.Text = "排序柱状图表";
+            this.titembarchart.Click += new System.EventHandler(this.titembarchart_Click);
             // 
             // tmenusetting
             // 
@@ -140,20 +158,20 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // tmenuitemchart
+            // toolStripMenuItem1
             // 
-            this.tmenuitemchart.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.titembarchart});
-            this.tmenuitemchart.Name = "tmenuitemchart";
-            this.tmenuitemchart.Size = new System.Drawing.Size(44, 21);
-            this.tmenuitemchart.Text = "图表";
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sockettem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(68, 21);
+            this.toolStripMenuItem1.Text = "即时通讯";
             // 
-            // titembarchart
+            // sockettem
             // 
-            this.titembarchart.Name = "titembarchart";
-            this.titembarchart.Size = new System.Drawing.Size(180, 22);
-            this.titembarchart.Text = "排序柱状图表";
-            this.titembarchart.Click += new System.EventHandler(this.titembarchart_Click);
+            this.sockettem.Name = "sockettem";
+            this.sockettem.Size = new System.Drawing.Size(180, 22);
+            this.sockettem.Text = "websocket";
+            this.sockettem.Click += new System.EventHandler(this.sockettem_Click);
             // 
             // MainForm
             // 
@@ -190,5 +208,7 @@
         private System.Windows.Forms.ToolStripMenuItem titemdealimg;
         private System.Windows.Forms.ToolStripMenuItem tmenuitemchart;
         private System.Windows.Forms.ToolStripMenuItem titembarchart;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sockettem;
     }
 }

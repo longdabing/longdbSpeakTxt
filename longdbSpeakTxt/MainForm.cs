@@ -1,5 +1,6 @@
 ﻿using longdbSpeakTxt.ImageToTxt;
 using longdbSpeakTxt.TxtToVoice;
+using longdbSpeakTxt.WebSocket;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,6 +85,14 @@ namespace longdbSpeakTxt
             barChart.MdiParent = this;
             barChart.WindowState = FormWindowState.Maximized;
             barChart.Show();
+        }
+
+        private void sockettem_Click(object sender, EventArgs e)
+        {
+            SocketForm socket = new SocketForm();
+            socket.MdiParent = this;
+            socket.WindowState = FormWindowState.Maximized;
+            socket.Show();
         }
     }
 }
